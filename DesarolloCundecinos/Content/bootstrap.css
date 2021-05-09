@@ -1,0 +1,59 @@
+body {
+    background-image: url('../img/FondoHome.jpg');
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /*Para que se vea en celular*/
+}
+
+.formulario {
+    background: rgba(0, 0, 0, .1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.700); /*Sombra borde*/
+    color: white;
+}
+
+.form-control {
+    background: rgba(0, 0, 0, .3);
+    border-style: none;
+    transition: 0.5s ease-in;
+    outline: none; /*Para que no se note el box shadow al escribir*/
+    box-shadow: none; /*Para que no se note el box shadow al escribir*/
+}
+
+    .form-control:focus {
+        background: rgba(0, 0, 0, .3); /*Color de el cuadro cuando se selecciona*/
+        box-shadow: none; /*Para que no se note el box shadow al escribir*/
+    }
+
+    .form-control:-moz-placeholder {
+        color: white; /*Color dentro del los cuadros de texto*/
+    }
+
+.boxGeneral {
+    background: #272CA5;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 700 !important;
+    color: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.700);
+    transition: 0.5s ease-in;
+}
+
+    .boxGeneral:hover {
+        color: white; /*Color que tiene al poner el cursor encima*/
+    }
+
+.boxLogReg {
+    background: none;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 700 !important;
+    color: white;
+    transition: 0.5s ease-in;
+}
+
+    .boxLogReg:hover {
+        color: #28a745
+    }

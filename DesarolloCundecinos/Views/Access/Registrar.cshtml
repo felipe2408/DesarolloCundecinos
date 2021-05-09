@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "Registrar";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="with-device-width,initial-scale>1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>CUNDECINOS</title>
+    <link rel="stylesheet" href="~/Content/bootstrapLogReg.css" />
+    <link href="~/Views/Home/Registrar.vbhtml" />
+</head>
+<div class="container">
+    <div class="row justify-content-left pt-5 mt-5 mr-1">
+        <div class="col-md-4 formulario">
+            <form id="btnvalidacion">
+                <div class="form-group mx-sm-4">
+                    <input type="submit" class="btn boxLogReg" value="LOG IN" id="iralogin">
+
+                    <input type="submit" class="btn boxLogReg" value="REGISTER" id="iraregistrar">
+
+                </div>
+            </form>
+            <form action="frmRegistrar">
+                <div class="form-group mx-sm-2 pt-3">
+                    <input type="text" class="form-control" name="usuario" placeholder="Usuario">
+                </div>
+                <div class="form-group mx-sm-2">
+                    <input type="text" class="form-control" name="email" placeholder="Email">
+                </div>
+                <div class="form-group mx-sm-2">
+                    <input type="text" class="form-control" name="contraseña" placeholder="Contraseña">
+                </div>
+                <div class="form-group mx-sm-2">
+                    <input type="text" class="form-control" name="Contraseña" placeholder="Confirmar Contraseña">
+                </div>
+                <div class="form-group mx-sm-2">
+                    <input type="text" class="form-control" name="celular" placeholder="Celular">
+                </div>
+                <div class="form-group mx-sm-2 pb-2">
+                    <input type="date" class="form-control" name="fechaNacimiento" placeholder="Fecha de Nacimiento">
+                </div>
+                <div class="form-group mx-sm-4 text-center">
+                    <input type="submit" class="btn btn-success" value="REGISTER">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    <script>
+    $(document).ready(function () {
+        $("#frmRegistrar").submit(function (e) {
+            e.preventDefault();
+            URL = "@Url.Content("~/Access/Registrar")"
+            parametros = $(this).serialize();
+            $.post(URL, parametros, function (data) {
+                if (data == "1") {
+                    document.location.href = "@Url.Content("~/Home/IndexHome")"
+
+                } else {
+
+                    alert(data)
+                }
+            })
+        })
+    })
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#iralogin").click(function (e) {
+            e.preventDefault();
+            URL = "@Url.Content("~/Access/iralogin")"
+            parametros = $(this).serialize();
+            $.post(URL, parametros, function (data) {
+                if (data == "1") {
+                    document.location.href = "@Url.Content("~/Access/Index")"
+
+                } else {
+
+                   document.location.href = "@Url.Content("~/Home/Index")"
+                }
+            })
+        })
+    })
+    </script>
+
+
+}
+
+
